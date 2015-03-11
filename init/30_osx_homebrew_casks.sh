@@ -35,8 +35,10 @@ casks=(
   # iterm2
   # launchbar
   macvim
+  mailbox
   moom
   omnidisksweeper
+  # postbox
   # race-for-the-galaxy
   reaper
   remote-desktop-connection
