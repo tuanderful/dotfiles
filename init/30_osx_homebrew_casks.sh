@@ -28,6 +28,7 @@ casks=(
   dropbox
   fastscripts
   firefox
+  flux
   google-chrome
   gyazo
   hex-fiend
