@@ -21,12 +21,13 @@ casks=(
   ## Applications
   a-better-finder-rename
   atom
-  bettertouchtool
+  # bettertouchtool
   charles
-  # chromium
+  chromium
   chronosync
+  crypt
   dropbox
-  fastscripts
+  # fastscripts
   firefox
   flux
   google-chrome
