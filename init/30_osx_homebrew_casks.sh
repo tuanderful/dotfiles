@@ -44,6 +44,7 @@ casks=(
   # race-for-the-galaxy
   reaper
   remote-desktop-connection
+  safemonk
   sonos
   spotify
   steam
