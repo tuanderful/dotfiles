@@ -21,27 +21,26 @@ casks=(
   ## Applications
   a-better-finder-rename
   atom
-  # bettertouchtool
+  bettertouchtool
   charles
   chromium
   chronosync
   crypt
   dropbox
-  # fastscripts
+  fastscripts
   firefox
   flux
   google-chrome
   gyazo
   hex-fiend
-  # istat-menus
-  # iterm2
-  # launchbar
+  istat-menus
+  iterm2
+  launchbar
   macvim
   mailbox
   moom
   omnidisksweeper
-  # postbox
-  # race-for-the-galaxy
+  race-for-the-galaxy
   reaper
   remote-desktop-connection
   safemonk
@@ -51,9 +50,9 @@ casks=(
   synology-assistant
   teamspeak-client
   the-unarchiver
-  # todoist
+  todoist
   totalfinder
-  # tower
+  tower
   transmission-remote-gui
   vagrant
   virtualbox
