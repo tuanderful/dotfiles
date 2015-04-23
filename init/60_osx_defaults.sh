@@ -5,11 +5,13 @@ is_osx || return 1
 # ~/.osx — http://sow.so/osx
 
 # Ask for the administrator password upfront
+e_header "Setting OSX Defaults (sudo required)"
 sudo -v
 
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
+e_header "General UI UX"
 # Set computer name (as done via System Preferences → Sharing)
 # sudo scutil --set ComputerName "0x73313077656E"
 # sudo scutil --set HostName "0x73313077656E"
@@ -127,9 +129,9 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 ###############################################################################
 # SSD-specific tweaks                                                         #
 ###############################################################################
-
+e_header "SSD Specific Adjustments"
 # Disable local Time Machine snapshots
-# sudo tmutil disablelocal
+sudo tmutil disablelocal
 
 # Disable hibernation (speeds up entering sleep mode)
 sudo pmset -a hibernatemode 0
@@ -147,6 +149,7 @@ sudo pmset -a sms 0
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
+e_header "Trackpad, mouse, keyboard, Bluetooth, and input devices"
 
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
@@ -205,6 +208,7 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 ###############################################################################
 # Screen                                                                      #
 ###############################################################################
+e_header "Screen, desktop, and screen saver"
 
 # Require password immediately after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1
@@ -228,6 +232,7 @@ sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutio
 ###############################################################################
 # Finder                                                                      #
 ###############################################################################
+e_header "Finder"
 
 # Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
 # defaults write com.apple.finder QuitMenuItem -bool true
@@ -332,8 +337,8 @@ sudo nvram boot-args="mbasd=1"
 chflags nohidden ~/Library
 
 # Remove Dropbox’s green checkmark icons in Finder
-file=/Applications/Dropbox.app/Contents/Resources/emblem-dropbox-uptodate.icns
-[ -e "$file" ] && mv -f "$file" "$file.bak"
+# file=/Applications/Dropbox.app/Contents/Resources/emblem-dropbox-uptodate.icns
+# [ -e "$file" ] && mv -f "$file" "$file.bak"
 
 # Expand the following File Info panes:
 # “General”, “Open with”, and “Sharing & Permissions”
@@ -345,6 +350,7 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
 ###############################################################################
+e_header "Dock, Dashboard, and hot corners"
 
 # Enable highlight hover effect for the grid view of a stack (Dock)
 defaults write com.apple.dock mouse-over-hilite-stack -bool true
@@ -439,6 +445,7 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 ###############################################################################
 # Safari & WebKit                                                             #
 ###############################################################################
+e_header "Safari / WebKit"
 
 # Privacy: don’t send search queries to Apple
 defaults write com.apple.Safari UniversalSearchEnabled -bool false
@@ -489,6 +496,7 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 ###############################################################################
 # Mail                                                                        #
 ###############################################################################
+e_header "Mail.app"
 
 # Disable send and reply animations in Mail.app
 # defaults write com.apple.mail DisableReplyAnimations -bool true
@@ -514,13 +522,16 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 ###############################################################################
 # Spotlight                                                                   #
 ###############################################################################
+e_header "Spotlight"
 
 # Hide Spotlight tray-icon (and subsequent helper)
 # sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
+
 # Disable Spotlight indexing for any volume that gets mounted and has not yet
 # been indexed before.
 # Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
 # sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
+
 # Change indexing order and disable some search results
 # Yosemite-specific search results (remove them if your are using OS X 10.9 or older):
 #   MENU_DEFINITION
@@ -552,6 +563,7 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 #    '{"enabled" = 0;"name" = "MENU_EXPRESSION";}' \
 #    '{"enabled" = 0;"name" = "MENU_WEBSEARCH";}' \
 #    '{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
+
 # Load new settings before rebuilding the index
 # killall mds
 # Make sure indexing is enabled for the main volume
@@ -562,6 +574,7 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 ###############################################################################
 # Terminal & iTerm 2                                                          #
 ###############################################################################
+e_header "Terminal / iTerm 2"
 
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
@@ -574,16 +587,18 @@ defaults write com.apple.terminal StringEncodings -array 4
 ###############################################################################
 # Time Machine                                                                #
 ###############################################################################
+e_header "Time Machine"
 
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 # Disable local Time Machine backups
-# hash tmutil &> /dev/null && sudo tmutil disablelocal
+hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 ###############################################################################
 # Activity Monitor                                                            #
 ###############################################################################
+e_header "Activity Monitor"
 
 # Show the main window when launching Activity Monitor
 defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
@@ -601,6 +616,7 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 ###############################################################################
 # Address Book, Dashboard, iCal, TextEdit, and Disk Utility                   #
 ###############################################################################
+e_header "Address Book, Dashboard, iCal, TextEdit, Disk Utility"
 
 # Enable the debug menu in Address Book
 # defaults write com.apple.addressbook ABShowDebugMenu -bool true
@@ -613,20 +629,22 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 
 # Use plain text mode for new TextEdit documents
 defaults write com.apple.TextEdit RichText -int 0
+
 # Open and save files as UTF-8 in TextEdit
 defaults write com.apple.TextEdit PlainTextEncoding -int 4
 defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 
 # Enable the debug menu in Disk Utility
-# defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
-# defaults write com.apple.DiskUtility advanced-image-options -bool true
+defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
+defaults write com.apple.DiskUtility advanced-image-options -bool true
 
 ###############################################################################
 # Mac App Store                                                               #
 ###############################################################################
+e_header "Mac App Store"
 
 # Enable the WebKit Developer Tools in the Mac App Store
-# defaults write com.apple.appstore WebKitDeveloperExtras -bool true
+defaults write com.apple.appstore WebKitDeveloperExtras -bool true
 
 # Enable Debug Menu in the Mac App Store
 # defaults write com.apple.appstore ShowDebugMenu -bool true
@@ -634,6 +652,7 @@ defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 ###############################################################################
 # Messages                                                                    #
 ###############################################################################
+e_header "Messages.app"
 
 # Disable automatic emoji substitution (i.e. use plain text smileys)
 # defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
@@ -647,6 +666,7 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 ###############################################################################
 # Google Chrome & Google Chrome Canary                                        #
 ###############################################################################
+e_header "Google Chrome & Chrome Canary"
 
 # Allow installing user scripts via GitHub Gist or Userscripts.org
 # defaults write com.google.Chrome ExtensionInstallSources -array "https://gist.githubusercontent.com/" "http://userscripts.org/*"
@@ -663,6 +683,7 @@ defaults write com.google.Chrome.canary DisablePrintPreview -bool true
 ###############################################################################
 # SizeUp.app                                                                  #
 ###############################################################################
+e_header "SizeUp (disabled)"
 
 # Start SizeUp at login
 # defaults write com.irradiatedsoftware.SizeUp StartAtLogin -bool true
@@ -673,6 +694,7 @@ defaults write com.google.Chrome.canary DisablePrintPreview -bool true
 ###############################################################################
 # Sublime Text                                                                #
 ###############################################################################
+e_header "Sublime Text (disabled)"
 
 # Install Sublime Text settings
 # cp init/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
@@ -686,25 +708,28 @@ defaults write com.google.Chrome.canary DisablePrintPreview -bool true
 ###############################################################################
 # Transmission.app                                                            #
 ###############################################################################
+e_header "Transmission.app"
 
 # Use `~/Documents/Torrents` to store incomplete downloads
-# defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-# defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Documents/Torrents"
+defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
+defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Documents/Torrents"
 
 # Don’t prompt for confirmation before downloading
-# defaults write org.m0k.transmission DownloadAsk -bool false
+defaults write org.m0k.transmission DownloadAsk -bool false
 
 # Trash original torrent files
-# defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
+defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
 
 # Hide the donate message
-# defaults write org.m0k.transmission WarningDonate -bool false
+defaults write org.m0k.transmission WarningDonate -bool false
+
 # Hide the legal disclaimer
-# defaults write org.m0k.transmission WarningLegal -bool false
+defaults write org.m0k.transmission WarningLegal -bool false
 
 ###############################################################################
 # Twitter.app                                                                 #
 ###############################################################################
+e_header "Twitter.app"
 
 # Disable smart quotes as it’s annoying for code tweets
 defaults write com.twitter.twitter-mac AutomaticQuoteSubstitutionEnabled -bool false
