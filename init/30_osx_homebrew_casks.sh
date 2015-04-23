@@ -35,6 +35,7 @@ casks=(
   hex-fiend
   istat-menus
   iterm2
+  lastpass
   launchbar
   macvim
   mailbox
@@ -89,6 +90,10 @@ cps=()
 for f in ~/Library/ColorPickers/*.colorPicker; do
   [[ -L "$f" ]] && cps=("${cps[@]}" "$f")
 done
+
+# Work around lastpass requiring an installer dance
+# we aren't doing anything special with homebrew / cask
+open "/opt/homebrew-cask/Caskroom/lastpass/latest/LastPass Installer.app"
 
 if (( ${#cps[@]} > 0 )); then
   e_header "Fixing colorPicker symlinks"
