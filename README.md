@@ -28,6 +28,7 @@ There's a lot of stuff that requires admin access via `sudo`, so be warned that 
 * `init/30_osx_homebrew_casks.sh` contains additional casks for my personal workflow, including Mailbox by Dropbox, Flux, and SaveMonk for Dropbox
 * `init/60_nvm.sh` contains setup of nvm for node.js and io.js
 * `init/60_osx_defaults.sh` sets sensible OSX defaults for the mac OS, from https://github.com/s10wen/dotfiles/blob/master/.osx
+* `init/99_app_store_reminders.sh` reminds you that there are things in the app store to get because they weren't available through homebrew / cask (or I was an idiot and didn't look first)
 * `source/50_nvm.sh` is a manual initialization of nvm. This is to avoid having nvm modify the `.bashrc` file.
 * `source/50_commacd.sh` is the commacd from shyiko: https://github.com/shyiko/commacd
 
