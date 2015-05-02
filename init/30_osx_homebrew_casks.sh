@@ -33,6 +33,7 @@ casks=(
   google-chrome
   gyazo
   hex-fiend
+  imageoptim
   istat-menus
   iterm2
   lastpass
