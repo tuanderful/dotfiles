@@ -42,6 +42,7 @@ casks=(
   mailbox
   moom
   omnidisksweeper
+  paparazzi
   race-for-the-galaxy
   reaper
   remote-desktop-connection
