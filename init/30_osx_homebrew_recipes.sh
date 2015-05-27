@@ -6,6 +6,7 @@ is_osx || return 1
 
 # Homebrew recipes
 recipes=(
+  android-platform-tools
   ansible
   ansifilter
   bash
@@ -25,6 +26,7 @@ recipes=(
   terminal-notifier
   the_silver_searcher
   tree
+  wget
 )
 
 brew_install_recipes

@@ -37,11 +37,14 @@ casks=(
   imageoptim
   istat-menus
   iterm2
+  karabiner
   lastpass
   launchbar
   macvim
   mailbox
   mailplane
+  menumeters
+  midi-monitor
   moom
   mosh
   omnidisksweeper
@@ -50,6 +53,11 @@ casks=(
   radiant-player
   reaper
   remote-desktop-connection
+  scroll-reverser
+  seil
+  sharemouse
+  skype
+  slack
   sonos
   sookasa
   spotify
@@ -64,7 +72,12 @@ casks=(
   vagrant
   virtualbox
   vlc
-  ## Quick Look plugins
+  ynab
+
+  # Drivers
+  d235j-xbox360-controller-driver
+
+  # Quick Look plugins
   betterzipql
   qlcolorcode
   qlmarkdown
@@ -76,6 +89,7 @@ casks=(
   suspicious-package
   webp-quicklook
   xmarks-safari
+
   ## Color pickers
   colorpicker-developer
   colorpicker-skalacolor
