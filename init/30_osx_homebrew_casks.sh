@@ -40,14 +40,15 @@ casks=(
   launchbar
   macvim
   mailbox
+  mailplane
   moom
   omnidisksweeper
   paparazzi
   race-for-the-galaxy
   reaper
   remote-desktop-connection
-  safemonk
   sonos
+  sookasa
   spotify
   steam
   synology-assistant
