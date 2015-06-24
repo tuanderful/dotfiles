@@ -264,4 +264,5 @@ Plug 'wavded/vim-stylus'
 Plug 'klen/python-mode', {'for': 'python'}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'wting/rust.vim', {'for': 'rust'}
+Plug 'tmux-plugins/vim-tmux-focus-events'
 call plug#end()

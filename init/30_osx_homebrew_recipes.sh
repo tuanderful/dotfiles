@@ -7,6 +7,7 @@ is_osx || return 1
 # Homebrew recipes
 recipes=(
   ansible
+  ansifilter
   bash
   cmatrix
   cowsay
@@ -23,6 +24,7 @@ recipes=(
   ssh-copy-id
   terminal-notifier
   the_silver_searcher
+  tmux
   tree
 )
 

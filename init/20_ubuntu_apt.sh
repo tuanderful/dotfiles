@@ -51,6 +51,7 @@ packages=(
   silversearcher-ag
   sl
   telnet
+  tmux
   tree
 )
 
