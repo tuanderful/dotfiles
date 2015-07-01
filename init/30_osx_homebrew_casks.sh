@@ -21,6 +21,8 @@ casks=(
   ## Applications
   a-better-finder-rename
   atom
+  aluxian-messenger
+  battle-net
   bettertouchtool
   charles
   chromium
@@ -28,6 +30,8 @@ casks=(
   crypt
   dropbox
   evernote
+  duet
+  easysimbl
   fastscripts
   firefox
   flux
