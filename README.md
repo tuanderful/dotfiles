@@ -78,7 +78,7 @@ Scripts in the `/init` subdirectory will be executed. A whole bunch of things wi
 #### Both
 * Node.js, npm and nave via the [init/50_node.sh](init/50_node.sh) script
 * Ruby, gems and rbenv via the [init/50_ruby.sh](init/50_ruby.sh) script
-* Some additional nice things in the init area
+* Some additional nice things in the init area 
 
 ## Inspiration
 <https://github.com/gf3/dotfiles>  
