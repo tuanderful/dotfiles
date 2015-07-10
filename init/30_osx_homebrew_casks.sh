@@ -27,6 +27,7 @@ casks=(
   chronosync
   crypt
   dropbox
+  evernote
   fastscripts
   firefox
   flux
@@ -42,6 +43,7 @@ casks=(
   mailbox
   mailplane
   moom
+  mosh
   omnidisksweeper
   paparazzi
   race-for-the-galaxy

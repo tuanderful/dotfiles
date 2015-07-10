@@ -1,18 +1,9 @@
 # Dotfiles
 My OSX / Ubuntu dotfiles.
 
-## About this project
-First off, this is a fork of [cowboy/dotfiles](https://github.com/cowboy/dotfiles), and you should start there. The rest of this has to do with **this specific dotfiles repo**, the changes and differences, and why those changes were made.
-
-Dear future self, you had good reasons at the time.
-
-> **OSX USAGE** You need to have [XCode](https://developer.apple.com/downloads/index.action?=xcode) or, at the very minimum, the [XCode Command Line Tools](https://developer.apple.com/downloads/index.action?=command%20line%20tools), which are available as a much smaller download.
->
-> The easiest way to install the XCode Command Line Tools in OSX 10.9+ is to open up a terminal, type `xcode-select --install` and [follow the prompts](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/).
-
-> **UBUNTU USAGE** you should at least update/upgrade APT with `sudo apt-get -qq update && sudo apt-get -qq dist-upgrade` first. Ben also has a [ansible script](https://github.com/cowboy/dotfiles/wiki/ubuntu-setup) if you want even more automation.
-
 ## Installing!
+**BEFORE YOU BEGIN, MAKE A FORK OF THIS REPO ON YOUR OWN GITHUB ACCOUNT** I change and break things. You don't want my changes. Plus, you want to be able to make this your own! Once you've forked successfully, you can run the following two lines:
+
 ```sh
 export github_user=YOUR_GITHUB_USER_NAME
 
@@ -25,12 +16,28 @@ There's a lot of stuff that requires admin access via `sudo`, so be warned that 
 
 ## Major Differences from cowboy/dotfiles
 * `copy/terminals/` contains a default "Solarized" themed terminal for both Terminal and iTerm. It's easier on the eyes, and works well with most CLI utilities. You can just run `open ~/terminals` to get a finder window and add from there.
-* `init/30_osx_homebrew_casks.sh` contains additional casks for my personal workflow, including Mailbox by Dropbox, Flux, and SaveMonk for Dropbox
+
+* `init/20_ubuntu_apt.sh` has some additional packages for personal taste
+* `init/30_osx_homebrew_casks.sh` contains additional casks for my personal workflow
+* `init/40_osx_homebrew_casks_android.sh` is a new set of casks specifically for android development
+* `init/40_osx_homebrew_casks_bigdata.sh` is a new set of casks specifically for bigdata tools
 * `init/60_nvm.sh` contains setup of nvm for node.js and io.js
 * `init/60_osx_defaults.sh` sets sensible OSX defaults for the mac OS, from https://github.com/s10wen/dotfiles/blob/master/.osx
-* `init/99_app_store_reminders.sh` reminds you that there are things in the app store to get because they weren't available through homebrew / cask (or I was an idiot and didn't look first)
+* `init/99_app_store_reminders.sh` just yells at you to remember to check the app store (for things not in casks)
+
 * `source/50_nvm.sh` is a manual initialization of nvm. This is to avoid having nvm modify the `.bashrc` file.
 * `source/50_commacd.sh` is the commacd from shyiko: https://github.com/shyiko/commacd
+
+## About this project
+First off, this is a fork of [cowboy/dotfiles](https://github.com/cowboy/dotfiles), and you should start there. The rest of this has to do with **this specific dotfiles repo**, the changes and differences, and why those changes were made.
+
+Dear future self, you had good reasons at the time.
+
+> **OSX USAGE** You need to have [XCode](https://developer.apple.com/downloads/index.action?=xcode) or, at the very minimum, the [XCode Command Line Tools](https://developer.apple.com/downloads/index.action?=command%20line%20tools), which are available as a much smaller download.
+>
+> The easiest way to install the XCode Command Line Tools in OSX 10.9+ is to open up a terminal, type `xcode-select --install` and [follow the prompts](http://osxdaily.com/2014/02/12/install-command-line-tools-mac-os-x/).
+
+> **UBUNTU USAGE** you should at least update/upgrade APT with `sudo apt-get -qq update && sudo apt-get -qq dist-upgrade` first. Ben also has a [ansible script](https://github.com/cowboy/dotfiles/wiki/ubuntu-setup) if you want even more automation.
 
 ## Refresher
 ### How the "dotfiles" command works
@@ -46,7 +53,6 @@ When [dotfiles][dotfiles] is run for the first time, it does a few things:
 On subsequent runs, step 1 is skipped, step 2 just updates the already-existing repo, and step 5 remembers what you selected the last time. The other steps are the same.
 
 ### Other subdirectories
-
 * The `/backups` directory gets created when necessary. Any files in `~/` that would have been overwritten by files in `/copy` or `/link` get backed up there.
 * The `/bin` directory contains executable shell scripts (including the [dotfiles][dotfiles] script) and symlinks to executable shell scripts. This directory is added to the path.
 * The `/caches` directory contains cached files, used by some scripts or functions.
@@ -65,7 +71,6 @@ Any file in the `/link` subdirectory gets symlinked into `~/` with `ln -s`. Edit
 Scripts in the `/init` subdirectory will be executed. A whole bunch of things will be installed, but _only_ if they aren't already.
 
 #### OS X
-
 * Minor XCode init via the [init/10_osx_xcode.sh](init/10_osx_xcode.sh) script
 * Homebrew via the [init/20_osx_homebrew.sh](init/20_osx_homebrew.sh) script
 * Homebrew recipes via the [init/30_osx_homebrew_recipes.sh](init/30_osx_homebrew_recipes.sh) script
