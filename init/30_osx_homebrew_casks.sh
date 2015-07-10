@@ -45,6 +45,7 @@ casks=(
   omnidisksweeper
   paparazzi
   race-for-the-galaxy
+  radiant-player
   reaper
   remote-desktop-connection
   sonos
@@ -72,6 +73,7 @@ casks=(
   quicknfo
   suspicious-package
   webp-quicklook
+  xmarks-safari
   ## Color pickers
   colorpicker-developer
   colorpicker-skalacolor
