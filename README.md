@@ -28,6 +28,20 @@ There's a lot of stuff that requires admin access via `sudo`, so be warned that 
 * `source/50_nvm.sh` is a manual initialization of nvm. This is to avoid having nvm modify the `.bashrc` file.
 * `source/50_commacd.sh` is the commacd from shyiko: https://github.com/shyiko/commacd
 
+### Prompts!
+By default, this dotfiles installs a bash-friendly version of the Powerline prompt common in zsh. You can change this by echoing a new theme into the `.dotfiles_prompt` file in the home directory. You can also add more prompts to the `prompts/` directory.
+
+```
+echo "YOURTHEME" > $HOME/.dotfiles_prompt
+```
+
+Available Themes:
+
+```
+powerline (default)
+cowboy    (Ben Alman's Prompt)
+```
+
 ## About this project
 First off, this is a fork of [cowboy/dotfiles](https://github.com/cowboy/dotfiles), and you should start there. The rest of this has to do with **this specific dotfiles repo**, the changes and differences, and why those changes were made.
 
