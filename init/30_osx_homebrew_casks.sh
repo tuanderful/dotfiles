@@ -76,7 +76,9 @@ casks=(
   vagrant
   virtualbox
   vlc
+  xmarks-safari
   ynab
+  yubiswitch
 
   # Drivers
   d235j-xbox360-controller-driver
@@ -92,7 +94,6 @@ casks=(
   quicknfo
   suspicious-package
   webp-quicklook
-  xmarks-safari
 
   ## Color pickers
   colorpicker-developer

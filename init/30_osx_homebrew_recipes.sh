@@ -14,13 +14,16 @@ recipes=(
   cowsay
   git
   git-extras
+  graphviz
   htop-osx
   hub
   id3tool
   lesspipe
+  lynx
   man2html
   mercurial
   nmap
+  qcachegrind
   sl
   ssh-copy-id
   terminal-notifier
