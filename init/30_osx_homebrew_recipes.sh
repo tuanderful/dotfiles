@@ -16,6 +16,7 @@ recipes=(
   git-extras
   graphviz
   htop-osx
+  httpie
   hub
   id3tool
   lesspipe
