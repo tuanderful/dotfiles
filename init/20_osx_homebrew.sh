@@ -39,10 +39,10 @@ function brew_install_recipes() {
 }
 
 # Cask setup
-function setup_cask() {
-  kegs=(caskroom/cask)
-  brew_tap_kegs
-  # No longer need a custom recipie for this
-  # recipes=(brew-cask)
-  # brew_install_recipes
+kegs=(caskroom/cask buo/cask-upgrade)
+brew_tap_kegs
+# recipes=(brew-cask)
+# brew_install_recipes
+function cask_ready() {
+  return 1
 }

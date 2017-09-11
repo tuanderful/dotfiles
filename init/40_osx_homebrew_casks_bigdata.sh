@@ -4,8 +4,8 @@ is_osx || return 1
 # Exit if Homebrew is not installed.
 [[ ! "$(type -P brew)" ]] && e_error "Brew casks need Homebrew to install." && return 1
 
-# setup Cash for install
-setup_cask
+# setup Cask for install
+[[ ! $(type -t cask_ready) == function ]] && source $DOTFILES/init/20_osx_homebrew.sh
 
 # Exit if, for some reason, cask is not installed.
 [[ ! "$(brew ls --versions brew-cask)" ]] && e_error "Brew-cask failed to install." && return 1

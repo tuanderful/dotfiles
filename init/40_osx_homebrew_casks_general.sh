@@ -5,7 +5,7 @@ is_osx || return 1
 [[ ! "$(type -P brew)" ]] && e_error "Brew casks need Homebrew to install." && return 1
 
 # setup Cask for install
-[[ ! $(type -t setup_cask) == function ]] && source $DOTFILES/init/20_osx_homebrew.sh && setup_cask
+[[ ! $(type -t cask_ready) == function ]] && source $DOTFILES/init/20_osx_homebrew.sh
 
 # Exit if, for some reason, cask is not installed.
 [[ ! "$(brew cask --version)" ]] && e_error "Brew-cask failed to install." && return 1
