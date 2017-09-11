@@ -37,3 +37,12 @@ function brew_install_recipes() {
     done
   fi
 }
+
+# Cask setup
+function setup_cask() {
+  kegs=(caskroom/cask)
+  brew_tap_kegs
+  # No longer need a custom recipie for this
+  # recipes=(brew-cask)
+  # brew_install_recipes
+}

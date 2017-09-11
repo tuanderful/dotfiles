@@ -21,7 +21,7 @@ targets=(
   457622435  # Yoink
 )
 
-e_header "Installing Mac App Store Items via mas:"
+e_header "Installing Mac App Store Items via Homebrew/mas:"
 for target in "${targets[*]}"; do
   mas install $target
 done
