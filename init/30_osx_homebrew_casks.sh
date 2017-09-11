@@ -16,88 +16,41 @@ brew_install_recipes
 # Hack to show the first-run brew-cask password prompt immediately.
 brew cask info this-is-somewhat-annoying 2>/dev/null
 
+# Graveyard Note
+# check git history on this file. There are nice things I just don't use
+# so I've removed them for speed.
+
 # Homebrew casks
 casks=(
-  ## Applications
-  a-better-finder-rename
+  adobe-creative-cloud
   atom
-  aluxian-messenger
   battle-net
   bettertouchtool
+  colorpicker-developer
+  colorpicker-skalacolor
   charles
-  chromium
-  chronosync
-  crypt
+  crossover
+  d235j-xbox360-controller-driver
   dropbox
-  evernote
-  duet
-  easysimbl
-  fastscripts
   firefox
-  flux
+  fluid
   google-chrome
-  gyazo
   hex-fiend
   imageoptim
-  istat-menus
   iterm2
-  karabiner
-  lastpass
-  launchbar
-  macvim
-  mailbox
-  mailplane
-  menumeters
-  midi-monitor
+  loopback
   moom
-  mosh
-  omnidisksweeper
-  paparazzi
-  race-for-the-galaxy
-  radiant-player
-  reaper
+  obs
   remote-desktop-connection
-  scroll-reverser
-  seil
-  sharemouse
   skype
   slack
   sonos
   sookasa
-  spotify
   steam
-  synology-assistant
-  teamspeak-client
-  the-unarchiver
-  todoist
-  totalfinder
-  tower
-  transmission-remote-gui
-  vagrant
-  virtualbox
-  vlc
-  xmarks-safari
-  ynab
-  yubiswitch
-
-  # Drivers
-  d235j-xbox360-controller-driver
-
-  # Quick Look plugins
-  betterzipql
-  qlcolorcode
-  qlmarkdown
-  qlprettypatch
-  qlstephen
-  quicklook-csv
-  quicklook-json
-  quicknfo
   suspicious-package
-  webp-quicklook
-
-  ## Color pickers
-  colorpicker-developer
-  colorpicker-skalacolor
+  the-unarchiver
+  vlc
+  yubiswitch
 )
 
 # Install Homebrew casks.
@@ -116,10 +69,6 @@ cps=()
 for f in ~/Library/ColorPickers/*.colorPicker; do
   [[ -L "$f" ]] && cps=("${cps[@]}" "$f")
 done
-
-# Work around lastpass requiring an installer dance
-# we aren't doing anything special with homebrew / cask
-open "/opt/homebrew-cask/Caskroom/lastpass/latest/LastPass Installer.app"
 
 if (( ${#cps[@]} > 0 )); then
   e_header "Fixing colorPicker symlinks"

@@ -22,6 +22,7 @@ recipes=(
   lesspipe
   lynx
   man2html
+  mas
   mercurial
   nmap
   qcachegrind
@@ -31,6 +32,8 @@ recipes=(
   the_silver_searcher
   tree
   wget
+  wine
+  winetricks
 )
 
 brew_install_recipes

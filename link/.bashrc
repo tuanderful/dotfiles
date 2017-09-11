@@ -2,7 +2,7 @@
 export DOTFILES=~/.dotfiles
 
 # Add binaries into the path
-PATH=$DOTFILES/bin:$PATH
+PATH=$DOTFILES/bin:/usr/local/sbin:$PATH
 export PATH
 
 # Source all files in "source"
