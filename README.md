@@ -20,7 +20,7 @@ There's a lot of stuff that requires admin access via `sudo`, so be warned that 
 * `init/20_ubuntu_apt.sh` has some additional packages for personal taste
 * `init/30_osx_homebrew_casks.sh` contains additional casks for my personal workflow
 * `init/40_osx_homebrew_casks_android.sh` is a new set of casks specifically for android development
-* `init/40_osx_homebrew_casks_bigdata.sh` is a new set of casks specifically for bigdata tools
+* `init/60_scm_breeze` sets up [scm_breeze](https://github.com/ndbroadbent/scm_breeze) with its defaults
 * `init/60_nvm.sh` contains setup of nvm for node.js and io.js
 * `init/60_osx_defaults.sh` sets sensible OSX defaults for the mac OS, from https://github.com/s10wen/dotfiles/blob/master/.osx
 * `init/99_app_store_reminders.sh` just yells at you to remember to check the app store (for things not in casks)
