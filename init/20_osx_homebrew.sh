@@ -39,7 +39,12 @@ function brew_install_recipes() {
 }
 
 # Cask setup
-kegs=(caskroom/cask buo/cask-upgrade)
+kegs=(
+  caskroom/cask
+  caskroom/drivers
+  caskroom/fonts
+  buo/cask-upgrade
+)
 brew_tap_kegs
 # recipes=(brew-cask)
 # brew_install_recipes

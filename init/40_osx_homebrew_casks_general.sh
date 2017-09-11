@@ -27,7 +27,6 @@ casks=(
   colorpicker-skalacolor
   charles
   crossover
-  d235j-xbox360-controller-driver
   dropbox
   firefox
   fluid
@@ -47,6 +46,7 @@ casks=(
   suspicious-package
   the-unarchiver
   vlc
+  xbox360-controller-driver
   yubiswitch
 )
 
