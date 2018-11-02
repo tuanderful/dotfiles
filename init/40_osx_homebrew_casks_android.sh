@@ -15,6 +15,7 @@ brew cask info this-is-somewhat-annoying 2>/dev/null
 
 # Homebrew casks
 casks=(
+  android-platform-tools
   android-studio
   java
 )

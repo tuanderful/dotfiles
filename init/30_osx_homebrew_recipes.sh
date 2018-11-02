@@ -6,7 +6,6 @@ is_osx || return 1
 
 # Homebrew recipes
 recipes=(
-  android-platform-tools
   ansible
   ansifilter
   bash
@@ -25,6 +24,7 @@ recipes=(
   mas
   mercurial
   nmap
+  nodenv
   qcachegrind
   sl
   ssh-copy-id
@@ -42,6 +42,9 @@ brew_install_recipes
 
 # This is where brew stores its binary symlinks
 local binroot="$(brew --config | awk '/HOMEBREW_PREFIX/ {print $2}')"/bin
+
+# nodenv init
+nodenv init
 
 # htop
 if [[ "$(type -P $binroot/htop)" ]] && [[ "$(stat -L -f "%Su:%Sg" "$binroot/htop")" != "root:wheel" || ! "$(($(stat -L -f "%DMp" "$binroot/htop") & 4))" ]]; then
