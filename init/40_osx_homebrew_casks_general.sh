@@ -19,35 +19,35 @@ brew cask info this-is-somewhat-annoying 2>/dev/null
 
 # Homebrew casks
 casks=(
-  adobe-creative-cloud
-  atom
-  battle-net
-  bettertouchtool
-  colorpicker-developer
-  colorpicker-skalacolor
+  # adobe-creative-cloud
+  # atom
+  # battle-net
+  # bettertouchtool
+  # colorpicker-developer
+  # colorpicker-skalacolor
   charles
-  crossover
-  dropbox
-  firefox
-  fluid
-  google-chrome
-  hex-fiend
+  # crossover
+  # dropbox
+  # firefox
+  # fluid
+  # google-chrome
+  # hex-fiend
   imageoptim
-  iterm2
-  loopback
-  moom
-  obs
-  remote-desktop-connection
-  skype
-  slack
-  sonos
-  sookasa
-  steam
-  suspicious-package
-  the-unarchiver
-  vlc
-  xbox360-controller-driver
-  yubiswitch
+  # iterm2
+  # loopback
+  # moom
+  # obs
+  # remote-desktop-connection
+  # skype
+  # slack
+  # sonos
+  # sookasa
+  # steam
+  # suspicious-package
+  # the-unarchiver
+  # vlc
+  # xbox360-controller-driver
+  # yubiswitch
 )
 
 # Install Homebrew casks.
