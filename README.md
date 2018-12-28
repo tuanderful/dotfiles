@@ -28,20 +28,6 @@ There's a lot of stuff that requires admin access via `sudo`, so be warned that 
 * `source/50_nvm.sh` is a manual initialization of nvm. This is to avoid having nvm modify the `.bashrc` file.
 * `source/50_commacd.sh` is the commacd from shyiko: https://github.com/shyiko/commacd
 
-### Prompts!
-By default, this dotfiles installs a bash-friendly version of the Powerline prompt common in zsh. You can change this by echoing a new theme into the `.dotfiles_prompt` file in the home directory. You can also add more prompts to the `prompts/` directory.
-
-```
-echo "YOURTHEME" > $HOME/.dotfiles_prompt
-```
-
-Available Themes:
-
-```
-powerline (default)
-cowboy    (Ben Alman's Prompt)
-```
-
 ## About this project
 First off, this is a fork of [cowboy/dotfiles](https://github.com/cowboy/dotfiles), and you should start there. The rest of this has to do with **this specific dotfiles repo**, the changes and differences, and why those changes were made.
 
@@ -54,8 +40,30 @@ Dear future self, you had good reasons at the time.
 > **UBUNTU USAGE** you should at least update/upgrade APT with `sudo apt-get -qq update && sudo apt-get -qq dist-upgrade` first. Ben also has a [ansible script](https://github.com/cowboy/dotfiles/wiki/ubuntu-setup) if you want even more automation.
 
 ## Refresher
+### Getting Started
+1. Fork this repo. Make your changes, push to your fork.
+
+2. Run the following:
+```sh
+export github_user=YOUR_GITHUB_USER_NAME
+
+bash -c "$(curl -fsSL https://raw.github.com/$github_user/dotfiles/master/bin/dotfiles)" && source ~/.bashrc
+```
+
+3. Select the font you want to use in iTerm.
+
+4. By default, this dotfiles installs a bash-friendly version of the Powerline prompt common in zsh. You can change this by echoing a new theme into the `.dotfiles_prompt` file in the home directory. You can also add more prompts to the `prompts/` directory.
+```sh
+echo "YOURTHEME" > $HOME/.dotfiles_prompt
+```
+Available Themes:
+```
+powerline (default)
+cowboy    (Ben Alman's Prompt)
+```
+
 ### How the "dotfiles" command works
-When [dotfiles][dotfiles] is run for the first time, it does a few things:
+When [dotfiles](dotfiles) is run for the first time, it does a few things:
 
 1. In Ubuntu, Git is installed if necessary via APT (it's already there in OSX).
 1. This repo is cloned into your user directory, under `~/.dotfiles`.
@@ -68,7 +76,7 @@ On subsequent runs, step 1 is skipped, step 2 just updates the already-existing 
 
 ### Other subdirectories
 * The `/backups` directory gets created when necessary. Any files in `~/` that would have been overwritten by files in `/copy` or `/link` get backed up there.
-* The `/bin` directory contains executable shell scripts (including the [dotfiles][dotfiles] script) and symlinks to executable shell scripts. This directory is added to the path.
+* The `/bin` directory contains executable shell scripts (including the [dotfiles](dotfiles) script) and symlinks to executable shell scripts. This directory is added to the path.
 * The `/caches` directory contains cached files, used by some scripts or functions.
 * The `/conf` directory just exists. If a config file doesn't **need** to go in `~/`, reference it from the `/conf` directory.
 * The `/source` directory contains files that are sourced whenever a new shell is opened (in alphanumeric order, hence the funky names).

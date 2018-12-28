@@ -16,8 +16,8 @@ targets=(
   # 404645717  # OmniGraffle professional
   # 409201541  # Pages
   # 1134717305 # Polymail
-  # 585829637  # Todoist
-  # 497799835  # Xcode
+  585829637  # Todoist
+  497799835  # Xcode
   # 457622435  # Yoink
 )
 
