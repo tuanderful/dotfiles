@@ -68,3 +68,9 @@ function txt_sub_restore() {
   )
   for cmd in "${cmds[@]}"; do /usr/libexec/PlistBuddy -c "$cmd" "$prefs"; done
 }
+
+# Tuan's personal OSX Settings
+# -------------------------------------------------
+
+# Icon size in for the Dock
+defaults write com.apple.dock tilesize -int 32; killall Dock
