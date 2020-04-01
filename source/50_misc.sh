@@ -25,3 +25,6 @@ fi
 
 # Disable ansible cows }:]
 export ANSIBLE_NOCOWS=1
+
+# mute zsh message on macOS¬
+export BASH_SILENCE_DEPRECATION_WARNING=1¬
