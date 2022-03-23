@@ -4,7 +4,8 @@ is_osx || return 1
 # Install Homebrew.
 if [[ ! "$(type -P brew)" ]]; then
   e_header "Installing Homebrew"
-  true | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  # true | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  true | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 # Exit if, for some reason, Homebrew is not installed.
@@ -40,9 +41,9 @@ function brew_install_recipes() {
 
 # Cask setup
 kegs=(
-  caskroom/cask
-  caskroom/drivers
-  caskroom/fonts
+  homebrew/cask
+  homebrew/drivers
+  homebrew/fonts
   buo/cask-upgrade
 )
 brew_tap_kegs
