@@ -1,6 +1,6 @@
 e_header "Installing SCM Breeze"
 
-git clone git://github.com/ndbroadbent/scm_breeze.git ~/.scm_breeze
+git clone https://github.com/ndbroadbent/scm_breeze.git ~/.scm_breeze
 
 # disable profile locations
 for rc in bashrc zshrc bash_profile; do
