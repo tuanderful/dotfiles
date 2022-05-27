@@ -42,8 +42,8 @@ function brew_install_recipes() {
 # Cask setup
 kegs=(
   homebrew/cask
-  homebrew/drivers
-  homebrew/fonts
+  homebrew/cask-drivers
+  homebrew/cask-fonts
   buo/cask-upgrade
 )
 brew_tap_kegs
