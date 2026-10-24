@@ -146,6 +146,9 @@ sudo pmset -a hibernatemode 0
 # Disable the sudden motion sensor as it’s not useful for SSDs
 sudo pmset -a sms 0
 
+# Turn the display off after 3 hours of inactivity
+sudo pmset -a displaysleep 180
+
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
